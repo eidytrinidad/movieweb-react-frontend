@@ -11,7 +11,7 @@ export const types={
     getBanner:"[peliculas]Get Banner]",
 
 
-    getOneMovie:"[peliculas]Get One Movie",
+
     updateMovie:"[peliculas]update Movie",
     deleteMovie:"[peliculas]delete Movie",
     createMovie:"[peliculas]Create Movie",

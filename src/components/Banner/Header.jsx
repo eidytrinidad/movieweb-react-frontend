@@ -24,14 +24,14 @@ export const Header = () => {
         </button>
       </nav>
 
-      {/* <article className="busqueda">
+      <article className="busqueda">
             <button className="btnSearch">
                 <i className="fas fa-search"></i>
             </button>
-            <button className="btnNotification">
-                <i className="fas fa-bell"></i>
-            </button>
-        </article> */}
+            <Link to="/admin/agregar" className="btnAgregar">
+                <i className="fas fa-plus"></i>
+            </Link>
+        </article>
     </header>
   );
 };

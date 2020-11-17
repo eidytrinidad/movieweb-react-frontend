@@ -12,7 +12,6 @@ export const MovieInfo = () => {
     dispatch(StartGetBannerMovie());
   }, [dispatch]);
 
-  console.log(banner)
 
   return (
     

@@ -37,15 +37,17 @@ header{
             }
         }
 
-        .btnNotification{
+        .btnAgregar{
             @include btn;
             border-radius: 50%;
-            background-color: #fff;
-            width: 30px;
-            height: 30px;
+            
+            // background-color: #fff;
+            
+            // height: 30px;
             i{
-               color:$Gris-Oscuro;
-                font-size:1rem;
+                color: $Blanco;
+                // width: 30px;
+                font-size:1.5rem;
             }
         }
     }

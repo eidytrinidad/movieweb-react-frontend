@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { EditBtn } from "../Buttons/EditBtn";
 
 export const MovieGrid = ({ peliculas }) => {
 
@@ -22,7 +23,7 @@ export const MovieGrid = ({ peliculas }) => {
                   </Link>
                 </div>
               </div>
-              <img src={pelicula.imagen} alt="Series" />
+              <img src={pelicula.imagen} alt={pelicula.titulo} />
             </div>
             <div className="texto">
               <h4 className="titulo">{pelicula.titulo}</h4>
@@ -34,6 +35,7 @@ export const MovieGrid = ({ peliculas }) => {
                 <i className="fas fa-star"></i>
                 <i className="fas fa-star"></i>
                 <p>{pelicula.puntuacion}</p>
+                <EditBtn id={pelicula._id}/>
               </div>
             </div>
           </div>

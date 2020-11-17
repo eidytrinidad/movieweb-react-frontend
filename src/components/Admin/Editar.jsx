@@ -1,27 +1,35 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { StartCreateMovie } from "../../actions/peliculas";
-import { useForm } from "../../hooks/useForm";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { StartGetPeliculaById } from "../../actions/peliculas";
 
-export const Agregar = () => {
+
+
+
+const initFormValues={
+  titulo:"",
+  genero:"",
+  director:"",
+  audio:"",
+  elenco:"",
+  imagen:"",
+  plot:"",
+  puntuacion:"",
+  descarga:"",
+  online:"",
+  titulos:"",
+  seccion:"",
+} 
+export const Editar = () => {
+
+  const {id}=useParams()
 
   const dispatch = useDispatch()
+  const {pelicula}= useSelector(state => state.peliculas)
 
+  console.log(pelicula);
+    const [formValues, setFormValues] = useState(initFormValues);
 
-  const [formValues, handleInputChange, reset] = useForm({
-    titulo: "",
-    genero: "",
-    director: "",
-    audio: "",
-    elenco: "",
-    imagen: "",
-    plot: "",
-    puntuacion: "",
-    descarga: "",
-    online: "",
-    titulos: "",
-    seccion: "",
-  });
 
   const {
     titulo,
@@ -38,18 +46,39 @@ export const Agregar = () => {
     seccion,
   } = formValues;
 
+  useEffect(() => {
+    dispatch(StartGetPeliculaById(id))
+
+    if (pelicula) {
+      const {titulo,genero,director,puntuacion,titulos,audio,descarga,latino}=pelicula
+     
+      setFormValues({
+        titulo,genero,director,puntuacion,titulos,audio,descarga,latino
+      })
+    }
+    
+  
+  }, [dispatch,id,setFormValues])
+  
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(StartCreateMovie(formValues))
     console.log(formValues);
   };
 
+  const handleInputChange=({target})=>{
+    setFormValues({
+      ...formValues,
+      [target.name]:target.value
+    })
+  }
+
   return (
-    
     <section className="AdminGrid">
-    <article className="contenedor">
-        <h3> Formulario Agregar </h3>
+      <article className="contenedor">
+        <h3>Formulario Editar </h3>
         <div className="Mensajes"></div>
+
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="titulo">Titulo</label>
@@ -122,7 +151,7 @@ export const Agregar = () => {
               className="form-control"
               value={plot}
             >
-              {" "}
+              
             </textarea>
           </div>
           <div className="form-group">
@@ -185,8 +214,7 @@ export const Agregar = () => {
 
           <button className="btnAgregar">Agregar</button>
         </form>
-        </article>
-      </section>
-    
+      </article>
+    </section>
   );
 };

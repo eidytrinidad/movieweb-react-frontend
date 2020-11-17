@@ -5,6 +5,7 @@ export const Player = ({trailerId}) => {
     <div className="playerSection">
       <div className="player" id="player">
         <iframe
+        title="trailerPlayer"
           id="ytplayer"
           type="text/html"
           width="550"

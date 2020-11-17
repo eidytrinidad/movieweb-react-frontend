@@ -232,7 +232,7 @@ main {
                         max-width: 150px;
                         display: flex;
                         align-items: center;
-                        justify-content: space-between;
+                        // justify-content: space-between;
                         margin-bottom: 10px;
 
                         i {
@@ -241,11 +241,21 @@ main {
 
                         p {
                             color: $Gris-Oscuro;
-                            margin: 0;
-                            margin-left: 5px;
+                            margin: 0 10px;
+                           
                             font-size: 1.25rem;
                             font-weight: 500;
                         }
+                       a{
+                        background:$Rojo;
+                        padding:8px 15px;
+                        color:#fff;
+                        border-radius:0.5rem;
+                        text-decoration:none;
+                        &:hover{
+                            background: lighten($color: $Rojo, $amount: 7);
+                        }
+                       }
                     }
                 }
 
