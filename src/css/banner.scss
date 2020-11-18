@@ -11,6 +11,10 @@
         border: none;
         background: none;
         color:$Blanco;
+
+        &:hover{
+            cursor: pointer;
+        }
     }
 
     @import "header.scss";

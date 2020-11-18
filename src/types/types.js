@@ -10,9 +10,10 @@ export const types={
     getTrailers:"[peliculas]Get Trailers]",
     getBanner:"[peliculas]Get Banner]",
 
-
-
     updateMovie:"[peliculas]update Movie",
     deleteMovie:"[peliculas]delete Movie",
     createMovie:"[peliculas]Create Movie",
+
+    login:"[auth] login",
+    logout:"[auth] logout",
 }

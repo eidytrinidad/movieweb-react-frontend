@@ -5,6 +5,7 @@ import { Footer } from "./Footer";
 import { Main } from "./Main/Main";
 import { PeliculaDetails } from "./Pelicula/PeliculaDetails";
 export const Home = () => {
+
   return (
     <>
       <Banner />

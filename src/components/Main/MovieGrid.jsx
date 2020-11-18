@@ -1,8 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { EditBtn } from "../Buttons/EditBtn";
 
 export const MovieGrid = ({ peliculas }) => {
+  const { uid } = useSelector((state) => state.auth);
+  if (uid) {
+    console.log(uid);
+  }
 
   return (
     <>
@@ -35,11 +40,12 @@ export const MovieGrid = ({ peliculas }) => {
                 <i className="fas fa-star"></i>
                 <i className="fas fa-star"></i>
                 <p>{pelicula.puntuacion}</p>
-               
-              </div> 
-              <div className="admin">
-              <EditBtn id={pelicula._id}/>
               </div>
+              {uid && (
+                <div className="admin">
+                  <EditBtn id={pelicula._id} />
+                </div>
+              )}
             </div>
           </div>
         ))}

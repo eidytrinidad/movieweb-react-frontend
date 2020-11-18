@@ -147,22 +147,23 @@ export const Agregar = () => {
           </section>
 
           <section className="row">
-            <article className="col-md-6 col-lg-6">
+            <article className="col-12 col-md-6 col-lg-6">
               <div className="form-group">
                 <label htmlFor="imagen">Imagen</label>
                 <input
+                
                   id="imagen"
                   ref={fileRef}
                   onChange={handleInputChange}
                   type="file"
                   name="imagen"
                   value={imagen}
-                  className="form-control"
+                 
                 />
               </div>
             </article>
 
-            <article className="col-md-3 col-lg-3">
+            <article className="col-12 col-md-3 col-lg-3">
               <div className="form-group">
                 <label htmlFor="online">Link(Ver Online)</label>
                 <input
@@ -175,7 +176,7 @@ export const Agregar = () => {
               </div>
             </article>
 
-            <article className="col-md-3 col-lg-3">
+            <article className="col-12 col-md-3 col-lg-3">
               <div className="form-group">
                 <label htmlFor="descarga">Link(Descarga)</label>
                 <input

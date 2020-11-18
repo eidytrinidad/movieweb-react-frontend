@@ -28,8 +28,15 @@ header{
         justify-content: space-between;
         //background-color: red;
         width: 100%;
-        max-width: 80px;
+        max-width: 100px;
         .btnSearch{
+            @include btn;
+            i{
+               
+                font-size:1.5rem;
+            }
+        }
+        .btnLogout{
             @include btn;
             i{
                
@@ -40,13 +47,10 @@ header{
         .btnAgregar{
             @include btn;
             border-radius: 50%;
-            
-            // background-color: #fff;
-            
-            // height: 30px;
+
             i{
                 color: $Blanco;
-                // width: 30px;
+                margin: 0 20px ;
                 font-size:1.5rem;
             }
         }

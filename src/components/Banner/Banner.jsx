@@ -16,7 +16,6 @@ const handleModal=()=>{
 const { banner } = useSelector((state) => state.peliculas);
 const dispatch = useDispatch();
 
-
 useEffect(() => {
   dispatch(StartGetBannerMovie());
 }, [dispatch]);
