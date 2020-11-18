@@ -52,7 +52,10 @@ export const peliculasReducer = (state = {}, action) => {
     case types.createMovie:
       return {
         ...state,
-     
+      };
+    case types.deleteMovie:
+      return {
+        ...state,
       };
     default:
       return state;

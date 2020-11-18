@@ -8,14 +8,10 @@ export const Home = () => {
   return (
     <>
       <Banner />
-
-      {/* <Main /> */}
-    
         <Switch>
           <Route exact path="/pelicula/:id" component={PeliculaDetails} />
           <Route path="/" component={Main} />
         </Switch>
-     
       <Footer />
     </>
   );

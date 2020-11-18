@@ -123,6 +123,7 @@ export const StartGetPeliculaById=(id)=>{
         const resp= await fetch(`https://movieweb-react.herokuapp.com/peliculas/${id}`)
         const data = await resp.json()
         const pelicula=data.pelicula
+    
   
         dispatch(getPeliculaById(pelicula))
     }
@@ -152,11 +153,15 @@ const getBannerMovie=(bannerMovie)=>({
     payload:bannerMovie
 })
 
-export const StartCreateMovie=(data)=>{
+export const StartCreateMovie=(imagen,data)=>{
 
     return async(dispatch)=>{
 
         try {
+           
+            data.imagen=imagen
+            
+
             const resp = await fetch('http://movieweb-react.herokuapp.com/peliculas/nueva',{
                 method:'POST',
                 headers:{
@@ -175,8 +180,20 @@ export const StartCreateMovie=(data)=>{
     }
 }
 
-const createMovie=(data)=>({
-        type:types.createMovie,
-      
+const createMovie=()=>({ type:types.createMovie})
 
-    })
+export const StartDelete=(id)=>{
+        return async(dispatch)=>{
+           
+            const resp = await fetch(`http://movieweb-react.herokuapp.com/peliculas/delete/${id}`,{
+                method:"DELETE"
+            })
+            const body = await resp.json()
+            console.log(body)
+            dispatch(deleteMovie)
+        }
+}
+
+const deleteMovie=()=>({
+    type:types.deleteMovie
+})

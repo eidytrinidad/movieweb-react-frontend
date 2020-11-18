@@ -42,14 +42,20 @@ header{
 
         form {
             width: 100%;
-            max-width: 600px;
+            max-width: 1200px;
             padding: 10px;
             margin: auto;
 
 
-            label {
-                font-weight: 600;
-                font-size: 1.5rem;
+            .row{
+                margin-bottom: 2rem;
+                label {
+                    font-weight: 600;
+                    font-size: 1.2rem;
+                }
+                input{
+                    height: 50px;
+                }
             }
 
             .btnAgregar {

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
 import { Admin } from "../Admin/Admin";
 import { Login } from "../Admin/Login";
 import { Home } from "../Home";
@@ -10,8 +10,9 @@ function AppRouter() {
       <Switch>
         
         <Route path="/login" component={Login}/>
+        <Route path="/home" component={Home} />
         <Route path="/admin" component={Admin} />
-        <Route path="/" component={Home} />
+        <Redirect to="/home"/>
       </Switch>
     </Router>
   );

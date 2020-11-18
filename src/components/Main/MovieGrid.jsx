@@ -35,7 +35,10 @@ export const MovieGrid = ({ peliculas }) => {
                 <i className="fas fa-star"></i>
                 <i className="fas fa-star"></i>
                 <p>{pelicula.puntuacion}</p>
-                <EditBtn id={pelicula._id}/>
+               
+              </div> 
+              <div className="admin">
+              <EditBtn id={pelicula._id}/>
               </div>
             </div>
           </div>

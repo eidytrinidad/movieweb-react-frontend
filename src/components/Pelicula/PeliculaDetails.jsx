@@ -12,7 +12,7 @@ const {pelicula}= useSelector(state => state.peliculas)
 
 useEffect(() => {
 dispatch(StartGetPeliculaById(id))
-
+console.log("PeliculaDetails",pelicula);
 }, [dispatch,id])
 
 return (
