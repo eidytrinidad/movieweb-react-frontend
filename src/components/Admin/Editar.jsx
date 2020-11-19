@@ -83,7 +83,7 @@ export const Editar = () => {
     //     const imagen = url;
     //   });
       dispatch(StartUpdateMovie(id, formValues,imagen));
-      
+      giy 
    
   };
 
