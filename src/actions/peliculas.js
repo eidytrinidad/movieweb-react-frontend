@@ -12,7 +12,7 @@ export const StartGetAllMovies = () => {
         try {
             const resp = await fetch("https://movieweb-react.herokuapp.com/peliculas")
             const data = await resp.json()
-            // console.log(data.peliculas)
+            // console.log("Peliculas Action",data.peliculas)
             const peliculas = data.peliculas
             dispatch(getAllMovies(peliculas))
         } catch (error) {
@@ -124,10 +124,10 @@ export const StartGetPeliculaById = (id) => {
     return async (dispatch) => {
         const resp = await fetch(`https://movieweb-react.herokuapp.com/peliculas/${id}`)
         const data = await resp.json()
-        const pelicula = data.pelicula
-
+        const pelicula = await data.pelicula
 
         dispatch(getPeliculaById(pelicula))
+      
     }
 }
 
@@ -178,7 +178,7 @@ export const StartCreateMovie = (imagen, data) => {
                 showConfirmButton: false,
                 timer: 1500
             })
-            console.log(body.msg)
+          
 
         } catch (error) {
             console.log(error)
@@ -208,7 +208,7 @@ export const StartDelete = (id) => {
                         method: "DELETE"
                     })
                     const body = await resp.json()
-                    console.log(body)
+             
                     dispatch(deleteMovie)
 
                     Swal.fire(
@@ -228,4 +228,40 @@ export const StartDelete = (id) => {
 
 const deleteMovie = () => ({
     type: types.deleteMovie
+})
+
+export const StartUpdateMovie=(id,data,imagen)=>{
+    return async(dispatch)=>{
+
+        try {
+            data.imagen = imagen
+            const resp = await fetch(`https://movieweb-react.herokuapp.com/peliculas/update/${id}`,{
+                method:"PUT",
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body:JSON.stringify(data)
+            })
+
+            // const body= await resp.json()
+           
+            Swal.fire({
+                icon: "success",
+                title: "Pelicula Actualizada con Exito",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+          
+            dispatch(updateMovie())
+           
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+const updateMovie=()=>({
+    type:types.updateMovie,
+    
 })

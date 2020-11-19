@@ -39,11 +39,6 @@ export const peliculasReducer = (state = {}, action) => {
         trailers: action.payload,
       };
 
-    case types.getOneMovie:
-      return {
-        ...state,
-        pelicula: action.payload,
-      };
     case types.getBanner:
       return {
         ...state,
@@ -53,10 +48,19 @@ export const peliculasReducer = (state = {}, action) => {
       return {
         ...state,
       };
+    case types.getOneMovie:
+      return {
+        pelicula: action.payload,
+      };
     case types.deleteMovie:
       return {
         ...state,
       };
+      case types.updateMovie:
+        return{
+        ...state,
+
+      }
     default:
       return state;
   }

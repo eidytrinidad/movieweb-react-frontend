@@ -20,6 +20,7 @@ const initialState = {
 };
 
 export const Agregar = () => {
+  
   const dispatch = useDispatch();
   const fileRef = useRef();
   const [formValues, handleInputChange, reset] = useForm(initialState);
@@ -56,6 +57,7 @@ export const Agregar = () => {
         const imagen = url;
         dispatch(StartCreateMovie(imagen, formValues));
       });
+      reset()
   };
 
   return (

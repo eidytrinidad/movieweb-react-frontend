@@ -5,9 +5,7 @@ import { EditBtn } from "../Buttons/EditBtn";
 
 export const MovieGrid = ({ peliculas }) => {
   const { uid } = useSelector((state) => state.auth);
-  if (uid) {
-    console.log(uid);
-  }
+ 
 
   return (
     <>

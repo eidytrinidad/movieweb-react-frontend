@@ -6,13 +6,11 @@ import { Editar } from "./Editar";
 
 export const Admin = () => {
 
-  
-
   return (
     <Switch>
       <Route exact path="/admin/agregar" component={Agregar} />
       <Route exact path="/admin/editar/:id" component={Editar} />
-      <Redirect to="/home" />
+      
     </Switch>
   );
 };

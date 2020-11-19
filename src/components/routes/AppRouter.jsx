@@ -34,7 +34,7 @@ function AppRouter() {
         <Route path="/login" component={Login}/> */}
        
         <PrivateRoute 
-                path="/admin/agregar" 
+                path="/admin" 
                 component={Admin}
                 isLoggedIn={isLoggedIn}/>
           <PublicRoute 

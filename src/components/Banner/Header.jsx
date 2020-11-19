@@ -12,9 +12,7 @@ export const Header = () => {
   };
 
   const { uid } = useSelector((state) => state.auth);
-  if (uid) {
-    console.log(uid);
-  }
+
 
 
   const handleLogout=()=>{
@@ -60,7 +58,7 @@ export const Header = () => {
         <button 
         onClick={handleLogout}
         className="btnLogout">
-        <i class="fas fa-sign-out-alt"></i>
+        <i className="fas fa-sign-out-alt"></i>
         </button>
           </>
         }
